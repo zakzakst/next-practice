@@ -1,0 +1,27 @@
+// TODO: 検討する。色、フォントなどでファイルを分け、_all.scssでまとめてから渡すほうがいいか？
+$primary-color: #f00;
+
+// prefers-color-scheme: light
+$background-color-light: #ffffff;
+$foreground-color-light: #171717;
+
+// prefers-color-scheme: dark
+$background-color-dark: #0a0a0a;
+$foreground-color-dark: #ededed;
+
+// custom properties
+// TODO: @property設定するか考える。記述が冗長な気がする。必要な場面に絞った利用が適切だと思う
+@property --background {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: $background-color-light;
+}
+$background-color: var(--background);
+@property --foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: $foreground-color-light;
+}
+$foreground-color: var(--foreground);
+
+$font-jp: var(--font-Noto-Sans-JP);

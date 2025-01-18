@@ -1,6 +1,6 @@
 import AtomSample from "@/app/_components/atoms/AtomSample";
 import MoleculeSample from "@/app/_components/molecules/MoleculeSample";
-import styles from "@/app/page.module.scss";
+import styles from "@/app/sample/page.module.scss";
 
 export default function Home() {
   return (
