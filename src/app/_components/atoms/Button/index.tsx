@@ -19,9 +19,11 @@ const Button = ({ children, className, icon, ...raProps }: Props) => {
     <RaButton
       className={classNames(
         className,
-        styles.main,
-        icon ? styles["-has-icon"] : undefined
+        styles.main
+        // icon ? styles["--has-icon"] : undefined
       )}
+      // NOTE: typed-scss-modules はハイフンやアンダースコアを含めたクラス名を自動でケバブケースにしてしまう。これを避けるため、マルチクラスではなくdata属性をセレクタに利用した
+      data-has-icon={icon ? true : undefined}
       {...raProps}
     >
       {icon}
