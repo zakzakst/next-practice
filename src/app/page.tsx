@@ -1,6 +1,7 @@
 "use client";
 
 import { Button as AntButton } from "antd";
+import { Button as RsButton } from "@adobe/react-spectrum";
 import AtomSample from "@/app/_components/atoms/AtomSample";
 import Button from "@/app/_components/atoms/Button";
 import MoleculeSample from "@/app/_components/molecules/MoleculeSample";
@@ -23,6 +24,13 @@ export default function Home() {
           Button
         </Button>
         <AntButton className={styles.antButton}>AntButton</AntButton>
+        <RsButton
+          variant="accent"
+          // NOTE: react-spectrumではカスタムクラスは設定できない
+          // className={styles.rsButton}
+        >
+          RsButton
+        </RsButton>
       </div>
     </StyleProvider>
   );

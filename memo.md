@@ -1,11 +1,17 @@
 ## やること
 
 - SCSS の変数を設定（下記参考にしてみる）
-  - デザイン庁
+  - デジタル庁
   - open props
   - tailwind
 - react-aria-components のコンポーネント一通り見る
   https://react-spectrum.adobe.com/react-aria/components.html
+
+## 参考ページ
+
+- https://react-spectrum.adobe.com/react-spectrum/index.html
+- https://design.digital.go.jp/resources/
+- https://open-props.style/
 
 ## 後回し
 
@@ -19,6 +25,11 @@
   https://ant.design/docs/react/compatible-style#layer
   もともと:where を利用して詳細度を下げて CSS を当てているため、そのままでもスタイルの上書きに不便はなさそうだった。
   https://developer.mozilla.org/ja/docs/Web/CSS/:where
+- 他の react のコンポーネントライブラリも、そんなに CSS の詳細度挙げていない。現状@layer を積極的に利用したほうがいいと思われる場面は少なそう。
+- レスポンシブは media query が多かった。以下の場合に自前の CSS を利用するとよさそう。
+  - container query の利用が効果的なコンポーネント（molecules あたり？）
+  - 複雑なレスポンシブ
+- scss を利用すると、共通する値を typescript と連携することが難しい。
 
 ## 参考ページ（済）
 
