@@ -3,8 +3,8 @@
 @layer atoms {
   .main {
     background-color: v.$primary-color;
-  }
-  .test {
-    color: #000;
+    &.-has-icon {
+      background-color: #f0f;
+    }
   }
 }
