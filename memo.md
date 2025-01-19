@@ -1,18 +1,24 @@
 ## やること
 
-- ant design へのスタイルの上書きしてみる
-  https://ant.design/
 - SCSS の変数を設定（下記参考にしてみる）
   - デザイン庁
   - open props
   - tailwind
 - react-aria-components のコンポーネント一通り見る
+  https://react-spectrum.adobe.com/react-aria/components.html
 
 ## 後回し
 
 - react-area のフックを使ってみる
   https://zenn.dev/ryo_manba/articles/ccd0fddcb5e02c
   ⇒react-aria-components に対応している。まず、react-aria-components を利用して挙動などを理解してからでないと使いこなすのが難しそうだったため、後回し
+
+## 所感
+
+- ant design のスタイル、下記を利用して優先度のコントロールしようとしたが、クライアントコンポーネントでしか利用できなかった。
+  https://ant.design/docs/react/compatible-style#layer
+  もともと:where を利用して詳細度を下げて CSS を当てているため、そのままでもスタイルの上書きに不便はなさそうだった。
+  https://developer.mozilla.org/ja/docs/Web/CSS/:where
 
 ## 参考ページ（済）
 

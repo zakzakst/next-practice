@@ -11,6 +11,8 @@
     "lint:typed-scss-modules:build": "typed-scss-modules src --aliasPrefixes.@ src/ --outputFolder __generated__/typed-scss-modules --listDifferent"
   },
   "dependencies": {
+    "@ant-design/cssinjs": "^1.22.1",
+    "antd": "^5.23.1",
     "classnames": "^2.5.1",
     "next": "15.1.5",
     "react": "^19.0.0",

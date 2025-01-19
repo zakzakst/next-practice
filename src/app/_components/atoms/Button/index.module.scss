@@ -3,7 +3,10 @@
 @layer atoms {
   .main {
     background-color: v.$primary-color;
-    &.-has-icon {
+    &.--has-icon {
+      background-color: #f0f;
+    }
+    &[data-has-icon="true"] {
       background-color: #f0f;
     }
   }
