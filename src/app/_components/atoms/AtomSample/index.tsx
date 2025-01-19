@@ -2,8 +2,7 @@
 
 import { Button as RaButton } from "react-aria-components";
 import classNames from "classnames";
-// import styles from "./index.module.scss";
-import styles from "./page.module.scss";
+import styles from "./index.module.scss";
 
 type Props = {
   children: React.ReactNode;
