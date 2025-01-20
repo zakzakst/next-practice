@@ -37,3 +37,4 @@
 - https://tech-education-nav.com/contents/educational-materials/scss-sass/scss-css-variables-integration
 - https://zenn.dev/cybozu_frontend/articles/2528ad2935be9f
 - https://developer.mozilla.org/ja/docs/Web/CSS/@layer
+- aria-labelledby は要素にアクセシブル名を提供する短いテキストを参照します。 aria-describedby は説明を提供する詳しいコンテンツを参照するために使用します。
