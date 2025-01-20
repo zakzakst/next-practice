@@ -1,14 +1,16 @@
 @use "@/app/_styles/variables" as v;
 
-// NOTE: isPendingの時のスタイルも忘れない
 @layer atoms {
   .main {
     background-color: v.$primary-color;
-    &.--has-icon {
-      background-color: #f0f;
-    }
     &[data-has-icon="true"] {
       background-color: #f0f;
+    }
+    &[aria-pressed="true"] {
+      background-color: #0ff;
+    }
+    &[disabled] {
+      background-color: #aaa;
     }
   }
 }
