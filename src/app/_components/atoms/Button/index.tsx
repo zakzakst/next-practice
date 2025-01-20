@@ -14,7 +14,7 @@ type Props = {
   className?: string;
 } & RaButtonProps;
 
-const Button = ({ children, className, icon, ...raProps }: Props) => {
+const Button = ({ children, icon, className, ...raProps }: Props) => {
   return (
     <RaButton
       className={classNames(
