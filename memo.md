@@ -4,6 +4,10 @@
   - デジタル庁
   - open props
   - tailwind
+- 下記とかを参考に各値を管理しやすい SCSS の記述意識する
+  - https://github.com/material-components/material-web/tree/main/tokens
+  - https://github.com/twbs/bootstrap/tree/main/scss
+  - https://labo.webis.co.jp/2022/01/z-index-control/
 - react-aria-components のコンポーネント一通り見る
   https://react-spectrum.adobe.com/react-aria/components.html
 
