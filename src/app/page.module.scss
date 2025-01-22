@@ -1,0 +1,5 @@
+@use "@/app/_styles/variables/_all" as v;
+
+.main {
+  background-color: v.$brand-facebook;
+}
