@@ -2,4 +2,9 @@
 
 .main {
   background-color: v.$brand-facebook;
+  border-radius: v.radius-size(s);
+  line-height: v.fonts-lh(s);
+  letter-spacing: v.fonts-ls(s);
+  font-weight: v.fonts-w(b);
+  z-index: v.z-index-level(base);
 }

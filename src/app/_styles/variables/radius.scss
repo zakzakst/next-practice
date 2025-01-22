@@ -1,3 +1,11 @@
-$s: 4px;
-$m: 8px;
-$l: 12px;
+@use "sass:map";
+
+$_sizes: (
+  s: 4px,
+  m: 8px,
+  l: 12px,
+);
+
+@function size($size) {
+  @return map.get($_sizes, $size);
+}

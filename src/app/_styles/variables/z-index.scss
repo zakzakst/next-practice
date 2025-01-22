@@ -1,6 +1,14 @@
-$base: 0;
-$content: 10;
-$float: 100;
-$popup: 1000;
-$notification: 10000;
-$overlay: 100000;
+@use "sass:map";
+
+$_levels: (
+  base: 0,
+  content: 10,
+  float: 100,
+  popup: 1000,
+  notification: 10000,
+  overlay: 100000,
+);
+
+@function level($level) {
+  @return map.get($_levels, $level);
+}
