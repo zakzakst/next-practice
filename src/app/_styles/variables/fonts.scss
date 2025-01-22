@@ -1,8 +1,30 @@
-$line-height-s: 1.4;
-$line-height-m: 1.5;
-$line-height-l: 1.7;
-$letter-spacing-s: 0.02;
-$letter-spacing-m: 0.04;
-$weight-r: 400;
-$weight-m: 600;
-$weight-b: 700;
+@use "sass:map";
+
+$_line-heights: (
+  s: 1.4,
+  m: 1.5,
+  l: 1.7,
+);
+
+@function lh($height) {
+  @return map.get($_line-heights, $height);
+}
+
+$_letter-spacing: (
+  s: 0.02em,
+  m: 0.04em,
+);
+
+@function ls($size) {
+  @return map.get($_letter-spacing, $size);
+}
+
+$_weight: (
+  r: 400,
+  m: 600,
+  b: 700,
+);
+
+@function w($weight) {
+  @return map.get($_weight, $weight);
+}
