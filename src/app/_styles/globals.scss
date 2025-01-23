@@ -1,5 +1,8 @@
 @use "@/app/_styles/variables" as v;
 @layer base, antd, atoms, molecules, pages;
+@tailwind base;
+// @tailwind components;
+@tailwind utilities;
 // TODO: 検討する。カスタムプロパティの設定は別ファイルにしてもいいかもしれない
 // TODO: 下記の:where(html)って参考にできそうか試す
 // https://github.com/argyleink/open-props/blob/main/src/props.aspects.css
