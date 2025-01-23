@@ -1,6 +1,14 @@
-$xs: 360;
-$sm: 480;
-$md: 768;
-$lg: 1024;
-$xl: 1440;
-$xxl: 1920;
+@use "sass:map";
+
+$_medias: (
+  xs: 360,
+  sm: 480,
+  md: 768,
+  lg: 1024,
+  xl: 1440,
+  xxl: 1920,
+);
+
+@function media($size) {
+  @return map.get($_medias, $size);
+}
