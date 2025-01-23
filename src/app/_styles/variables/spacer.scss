@@ -1,0 +1,15 @@
+@use "sass:map";
+
+$_spacer: 1rem !default;
+$_spacers: (
+  0: 0,
+  1: $_spacer * 0.25,
+  2: $_spacer * 0.5,
+  3: $_spacer,
+  4: $_spacer * 1.5,
+  5: $_spacer * 3,
+);
+
+@function spacer($key) {
+  @return map.get($_spacers, $key);
+}
