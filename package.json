@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "hygen:component": "hygen new component",
     "build:typed-scss-modules": "typed-scss-modules src --aliasPrefixes.@ src/ --outputFolder __generated__/typed-scss-modules",
     "lint:typed-scss-modules:build": "typed-scss-modules src --aliasPrefixes.@ src/ --outputFolder __generated__/typed-scss-modules --listDifferent"
