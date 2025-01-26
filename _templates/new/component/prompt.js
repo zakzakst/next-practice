@@ -10,4 +10,10 @@ module.exports = [
     name: "name",
     message: "コンポーネント名を入力してください",
   },
+  {
+    type: "confirm",
+    name: "jest",
+    message: "jestファイルを利用しますか",
+    initial: false,
+  },
 ];

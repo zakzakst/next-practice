@@ -1,6 +1,5 @@
 ## やること
 
-- テストカバレッジの設定
 - react hook form に慣れる
 - react-aria-components のコンポーネント一通り見る
   https://react-spectrum.adobe.com/react-aria/components.html
