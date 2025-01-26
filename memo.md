@@ -1,17 +1,7 @@
 ## やること
 
-- react hook form に慣れる
 - react-aria-components のコンポーネント一通り見る
   https://react-spectrum.adobe.com/react-aria/components.html
-- SCSS の変数を設定（下記参考にしてみる）
-  - デジタル庁
-  - open props
-  - tailwind
-- 下記とかを参考に各値を管理しやすい SCSS の記述意識する
-  - https://github.com/material-components/material-web/tree/main/tokens
-  - https://github.com/twbs/bootstrap/tree/main/scss
-  - https://labo.webis.co.jp/2022/01/z-index-control/
-- utility は styles で直接指定する？（関数用意しておいて、でも scss と二重管理になるか。。一応調べたり、試したりだけする？であれば一部だけ tailwind 導入とかでもいいか？実際の運用時だとスペース調整のためだけにクラス名設定するの手間。organisms（もしくは pages のコンテンツ） 以上で utility を利用できるとかもあり？でもコーディングルールが複雑になってしまうか？ であれば面倒だが自身でユーティリティクラスつくったほうがいい？）
 
 ## 参考ページ
 
@@ -24,6 +14,15 @@
 - react-area のフックを使ってみる
   https://zenn.dev/ryo_manba/articles/ccd0fddcb5e02c
   ⇒react-aria-components に対応している。まず、react-aria-components を利用して挙動などを理解してからでないと使いこなすのが難しそうだったため、後回し
+- SCSS の変数を設定（下記参考にしてみる）
+  - デジタル庁
+  - open props
+  - tailwind
+- 下記とかを参考に各値を管理しやすい SCSS の記述意識する
+  - https://github.com/material-components/material-web/tree/main/tokens
+  - https://github.com/twbs/bootstrap/tree/main/scss
+  - https://labo.webis.co.jp/2022/01/z-index-control/
+- utility は styles で直接指定する？（関数用意しておいて、でも scss と二重管理になるか。。一応調べたり、試したりだけする？であれば一部だけ tailwind 導入とかでもいいか？実際の運用時だとスペース調整のためだけにクラス名設定するの手間。organisms（もしくは pages のコンテンツ） 以上で utility を利用できるとかもあり？でもコーディングルールが複雑になってしまうか？ であれば面倒だが自身でユーティリティクラスつくったほうがいい？）
 
 ## 所感
 
