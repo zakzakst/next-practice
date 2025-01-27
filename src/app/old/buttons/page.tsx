@@ -46,7 +46,8 @@ export default function Home() {
           className={styles.button}
           icon={<span>icon</span>}
           onPress={() => alert("Button pressed")}
-          isPending
+          // isPending
+          // isDisabled
         >
           Button
         </Button>
