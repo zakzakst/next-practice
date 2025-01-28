@@ -6,6 +6,7 @@ import classNames from "classnames";
 import styles from "./index.module.scss";
 
 // TODO:
+// - 待機中の時、現状は設定されたテキスト要素をなくしているが、ボタンの幅が変わってしまうので、要素は無くさずにCSSで対応する。その際、アクセシビリティも考慮する
 // - Aタグとの使い分け（他のreactのコンポーネントライブラリの実装方法見てみる）
 
 type Props = {
@@ -26,8 +27,14 @@ const Button = ({ children, icon, className, ...raProps }: Props) => {
       data-has-icon={icon ? true : undefined}
       {...raProps}
     >
-      {icon}
-      {children}
+      {raProps.isPending ? (
+        <span aria-label="loading">...</span>
+      ) : (
+        <>
+          {icon}
+          {children}
+        </>
+      )}
     </RaButton>
   );
 };
