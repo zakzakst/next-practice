@@ -2,6 +2,11 @@
 
 - react-aria-components のコンポーネント一通り見る
   https://react-spectrum.adobe.com/react-aria/components.html
+- テストコード書く
+  https://github.com/adobe/react-spectrum/tree/main/packages/react-aria-components/test
+- 下記みたいな書き方試す（props を受け取って利用する）
+  https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/test/Button.test.js#L140
+  https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/test/Button.test.js#L194
 
 ## 参考ページ
 

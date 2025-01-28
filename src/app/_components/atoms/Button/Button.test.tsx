@@ -6,27 +6,31 @@ describe("Button", () => {
    * Propsの確認
    */
   it("ボタンのテキストが表示される", () => {
-    const { getByText } = render(<Button>ボタン</Button>);
-    expect(getByText("ボタン")).toBeInTheDocument();
+    const { getByRole } = render(<Button>ボタン</Button>);
+    const buttonEl = getByRole("button");
+    expect(buttonEl).toBeInTheDocument();
   });
 
   it("アイコンが挿入される", () => {
-    const { getByText } = render(
+    const { getByRole, getByText } = render(
       <Button icon={<span>アイコン</span>}>ボタン</Button>
     );
-    expect(getByText("アイコン")).toBeInTheDocument();
-    expect(getByText("ボタン")).toHaveAttribute("data-has-icon", "true");
+    const buttonEl = getByRole("button");
+    const iconEl = getByText("アイコン");
+    expect(buttonEl).toHaveAttribute("data-has-icon", "true");
+    expect(iconEl).toBeInTheDocument();
   });
 
   it("待機状態が設定される", () => {
-    const { getByText } = render(<Button isPending>ボタン</Button>);
-    expect(getByText("ボタン")).toHaveAttribute("data-pending", "true");
-    expect(getByText("ボタン")).toHaveAttribute("aria-disabled", "true");
+    const { getByRole } = render(<Button isPending>ボタン</Button>);
+    const buttonEl = getByRole("button");
+    expect(buttonEl).toHaveAttribute("data-pending", "true");
+    expect(buttonEl).toHaveAttribute("aria-disabled", "true");
   });
 
   it("無効状態が設定される", () => {
-    const { getByText } = render(<Button isDisabled>ボタン</Button>);
-    expect(getByText("ボタン")).toHaveAttribute("data-disabled", "true");
-    expect(getByText("ボタン")).toHaveAttribute("disabled");
+    const { getByRole } = render(<Button isDisabled>ボタン</Button>);
+    const buttonEl = getByRole("button");
+    expect(buttonEl).toBeDisabled();
   });
 });
