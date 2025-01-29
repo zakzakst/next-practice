@@ -7,9 +7,9 @@ describe("ToggleButton", () => {
    * Propsの確認
    */
   it("ボタンのテキストが表示される", () => {
-    const { getByText } = render(<ToggleButton>ボタン</ToggleButton>);
-    const toggleButtonEl = getByText("ボタン");
-    expect(toggleButtonEl).toBeInTheDocument();
+    const { getByRole } = render(<ToggleButton>ボタン</ToggleButton>);
+    const toggleButtonEl = getByRole("button");
+    expect(toggleButtonEl.textContent).toBe("ボタン");
   });
 
   it("アイコンが挿入される", () => {
