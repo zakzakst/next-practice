@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Button from "./";
@@ -62,7 +63,40 @@ describe("Button", () => {
     expect(buttonEl).not.toHaveFocus();
   });
 
-  // it('TODO: フォーム送信が正しく挙動する', () => {
-  // // NOTE: 待機状態もテストする
-  // })
+  it("フォーム送信が正しく挙動する", async () => {
+    const user = userEvent.setup();
+    const onSubmitSpy = jest.fn((e) => e.preventDefault());
+
+    // eslint-disable-next-line
+    const TestComponent = (props: any) => {
+      const [pending, setPending] = useState(false);
+      return (
+        <form
+          onSubmit={(e) => {
+            props.onSubmit(e);
+          }}
+        >
+          <Button
+            type="submit"
+            isPending={pending}
+            onPress={() => setPending(true)}
+          >
+            送信
+          </Button>
+        </form>
+      );
+    };
+    const { container } = render(<TestComponent onSubmit={onSubmitSpy} />);
+
+    await user.tab();
+    await user.keyboard("{Enter}");
+    expect(onSubmitSpy).toHaveBeenCalled();
+    onSubmitSpy.mockClear();
+
+    // 待機状態時の挙動
+    await user.keyboard("{Enter}");
+    expect(onSubmitSpy).not.toHaveBeenCalled();
+    const loadingEl = container.querySelector("span");
+    expect(loadingEl?.textContent).toBe("...");
+  });
 });
