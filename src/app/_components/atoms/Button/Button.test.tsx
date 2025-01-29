@@ -7,8 +7,8 @@ describe("Button", () => {
    * Propsの確認
    */
   it("ボタンのテキストが表示される", () => {
-    const { getByRole } = render(<Button>ボタン</Button>);
-    const buttonEl = getByRole("button");
+    const { getByText } = render(<Button>ボタン</Button>);
+    const buttonEl = getByText("ボタン");
     expect(buttonEl).toBeInTheDocument();
   });
 
