@@ -55,7 +55,7 @@ export default function Home() {
           className={styles.button}
           icon={<span>icon</span>}
           isSelected={isSelected}
-          // isDisabled
+          isDisabled
           onPress={() => setSelected(!isSelected)}
         >
           ToggleButton
