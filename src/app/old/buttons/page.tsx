@@ -75,8 +75,9 @@ export default function Home() {
           // NOTE: 未選択無効だと全部選択しない状態のクリック時に前選択になる
           // disallowEmptySelection
           // NOTE: selectionModeによって各ボタン要素がチェックボックスかラジオボタンか変わる（スタイルの設定時に注意）
-          selectionMode="multiple"
+          // selectionMode="multiple"
           onSelectionChange={(keys) => console.log(keys)}
+          orientation="vertical"
         />
       </div>
     </StyleProvider>
