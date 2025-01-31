@@ -54,4 +54,42 @@ describe("ToggleButtonGroup", () => {
       expect(radio).toBeDisabled();
     }
   });
+
+  it("複数選択が設定される", () => {
+    const { getByRole } = renderComponent({
+      items: ToggleButtonItems,
+      selectionMode: "multiple",
+    });
+    const toggleButtonGroupEl = getByRole("toolbar");
+    expect(toggleButtonGroupEl).toBeInTheDocument();
+  });
+
+  it("横方向の並び（デフォルト）が設定される", () => {
+    const { getByRole } = renderComponent({
+      items: ToggleButtonItems,
+    });
+    const toggleButtonGroupEl = getByRole("radiogroup");
+    expect(toggleButtonGroupEl).toHaveAttribute(
+      "aria-orientation",
+      "horizontal"
+    );
+  });
+
+  it("縦方向の並びが設定される", () => {
+    const { getByRole } = renderComponent({
+      items: ToggleButtonItems,
+      orientation: "vertical",
+    });
+    const toggleButtonGroupEl = getByRole("radiogroup");
+    expect(toggleButtonGroupEl).toHaveAttribute("aria-orientation", "vertical");
+  });
+
+  it("ARIAラベルが設定される", () => {
+    const { getByRole } = renderComponent({
+      items: ToggleButtonItems,
+      "aria-label": "label",
+    });
+    const toggleButtonGroupEl = getByRole("radiogroup");
+    expect(toggleButtonGroupEl).toHaveAttribute("aria-label", "label");
+  });
 });
