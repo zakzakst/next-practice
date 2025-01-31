@@ -12,7 +12,7 @@ export type Item = {
   isDisabled?: boolean;
 };
 
-type Props = {
+export type Props = {
   items: Item[];
   className?: string;
 } & RaToggleButtonGroupProps;
