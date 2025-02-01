@@ -8,19 +8,21 @@ import styles from "./index.module.scss";
 
 type Props = {
   children: React.ReactNode;
+  ref?: React.Ref<HTMLInputElement>;
   className?: string;
   isDisabled?: boolean;
 } & RaFileTriggerProps;
 
 const FileTrigger = ({
   children,
+  ref,
   className,
   isDisabled,
   ...raProps
 }: Props) => {
   return (
     <div className={classNames(className, styles.main)}>
-      <RaFileTrigger {...raProps}>
+      <RaFileTrigger {...raProps} ref={ref}>
         <RaButton className={styles.button} isDisabled={isDisabled}>
           {children}
         </RaButton>

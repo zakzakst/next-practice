@@ -1,3 +1,4 @@
+import React from "react";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import FileTrigger from "./";
@@ -50,6 +51,14 @@ describe("FileTrigger", () => {
     );
     const inputEl = container.querySelector("input");
     expect(inputEl).toHaveAttribute("webkitdirectory");
+  });
+
+  it("refでinput要素を取得できる", () => {
+    // NOTE: 恐らくinputにfocus当てるなどの利用想定
+    const ref = React.createRef<HTMLInputElement>();
+    const { container } = render(<FileTrigger ref={ref}>ボタン</FileTrigger>);
+    const inputEl = container.querySelector("input");
+    expect(ref.current).toBe(inputEl);
   });
 
   /**
