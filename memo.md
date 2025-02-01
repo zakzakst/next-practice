@@ -1,5 +1,6 @@
 ## やること
 
+- react hook form をコンポーネント分割して利用
 - react-aria-components のコンポーネント一通り見る
   https://react-spectrum.adobe.com/react-aria/components.html
 - テストコード書く
@@ -40,6 +41,7 @@
   - container query の利用が効果的なコンポーネント（molecules あたり？）
   - 複雑なレスポンシブ
 - scss を利用すると、共通する値を typescript と連携することが難しい。
+- tailwind と@layer の調整が上手くいかない（v4 の tailwind が@layer 使いやすくなった的な記事は見かけたので、バージョンアップすれば対応は簡単かもしれないが。。）
 
 ## 参考ページ（済）
 

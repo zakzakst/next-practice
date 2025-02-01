@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 // import styles from "@/app/page.module.scss";
+import FileTrigger from "@/app/_components/atoms/FileTrigger";
 
 type FormData = {
   name: string;
@@ -25,6 +26,15 @@ export default function Home() {
 
   return (
     <>
+      <FileTrigger
+        // isDisabled
+        // acceptDirectory
+        allowsMultiple
+        acceptedFileTypes={["image/png", "image/jpeg"]}
+        onSelect={(files) => console.log(files)}
+      >
+        FileTrigger
+      </FileTrigger>
       {/* <div className={styles.main}>
         <h1 className="text-3xl font-bold underline px-1">Hello, Next.js!</h1>
       </div> */}
