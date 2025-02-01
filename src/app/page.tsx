@@ -35,10 +35,14 @@ export default function Home() {
       value: /^[A-Za-z]+$/i,
       message: "アルファベットで入力してください",
     },
+    onChange() {
+      console.log(errors.name?.ref);
+    },
   });
 
   useEffect(() => {
     setFocus("name");
+    // console.log(document.activeElement);
   }, [setFocus]);
 
   return (
@@ -55,7 +59,12 @@ export default function Home() {
       {/* <div className={styles.main}>
         <h1 className="text-3xl font-bold underline px-1">Hello, Next.js!</h1>
       </div> */}
-      <form onSubmit={handleSubmit((data) => setData(data))}>
+      <form
+        onSubmit={handleSubmit((data) => {
+          setData(data);
+          console.error(errors.name?.ref);
+        })}
+      >
         {/* <input
           type="text"
           id="name"
