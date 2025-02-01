@@ -1,0 +1,10 @@
+@use "@/app/_styles/variables" as v;
+
+@layer atoms {
+  .main {
+    background-color: v.$primary-color;
+  }
+  .button {
+    background-color: #888;
+  }
+}
