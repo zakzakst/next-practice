@@ -6,6 +6,10 @@ import { useForm } from "react-hook-form";
 import FileTrigger from "@/app/_components/atoms/FileTrigger";
 import InputTest from "@/app/_components/atoms/InputTest";
 
+// NOTE: 任意の入力要素の位置にスクロールさせることなどを想定して、refを取得する処理のやりかたを考えていたが、スマートな方法は思いつかなかった。一応下記ならできそうかなと感じた。
+// - パターン1: setFocusでフォーカスを当ててからdocument.activeElementで要素取得
+// - パターン2: registerで設定するrefとは別でuseRefで設定する
+
 type FormData = {
   name: string;
 };
