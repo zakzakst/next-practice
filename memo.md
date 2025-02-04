@@ -4,9 +4,6 @@
   https://react-spectrum.adobe.com/react-aria/components.html
 - テストコード書く
   https://github.com/adobe/react-spectrum/tree/main/packages/react-aria-components/test
-- 下記みたいな書き方試す（props を受け取って利用する）
-  https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/test/Button.test.js#L140
-  https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/test/Button.test.js#L194
 
 ## 参考ページ
 
@@ -28,6 +25,9 @@
   - https://github.com/twbs/bootstrap/tree/main/scss
   - https://labo.webis.co.jp/2022/01/z-index-control/
 - utility は styles で直接指定する？（関数用意しておいて、でも scss と二重管理になるか。。一応調べたり、試したりだけする？であれば一部だけ tailwind 導入とかでもいいか？実際の運用時だとスペース調整のためだけにクラス名設定するの手間。organisms（もしくは pages のコンテンツ） 以上で utility を利用できるとかもあり？でもコーディングルールが複雑になってしまうか？ であれば面倒だが自身でユーティリティクラスつくったほうがいい？）
+- 下記みたいな書き方試す（props を受け取って利用する）
+  https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/test/Button.test.js#L140
+  https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/test/Button.test.js#L194
 
 ## 所感
 
