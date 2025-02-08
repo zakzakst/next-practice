@@ -4,6 +4,7 @@
 import {
   Button,
   ComboBox as RaComboBox,
+  ComboBoxProps as RaComboBoxProps,
   Input,
   Label,
   ListBox,
@@ -18,15 +19,18 @@ type Item = {
   label: string;
 };
 
-type Props = {
+type OwnProps = {
   label: string;
   items: Item[];
   className?: string;
 };
 
-const ComboBox = ({ label, items, className }: Props) => {
+// TODO: RaComboBoxPropsの引数きちんと読み切れていない（エラーが出ていないだけ）。余裕ある時にちゃんと見る。
+type Props = OwnProps & Omit<RaComboBoxProps<Item>, keyof OwnProps>;
+
+const ComboBox = ({ label, items, className, ...props }: Props) => {
   return (
-    <RaComboBox className={classNames(className, styles.main)}>
+    <RaComboBox className={classNames(className, styles.main)} {...props}>
       <Label>{label}</Label>
       <div>
         <Input />
