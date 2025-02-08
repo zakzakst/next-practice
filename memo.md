@@ -1,5 +1,6 @@
 ## やること
 
+- vscode の launch.json 使ってみる
 - react-aria-components のコンポーネント一通り見る
   https://react-spectrum.adobe.com/react-aria/components.html
 - テストコード書く

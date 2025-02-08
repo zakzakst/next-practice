@@ -11,9 +11,10 @@ export default function Home() {
         items={[
           {
             id: "hoge",
-            label: "hoge",
+            label: "hoge label",
           },
         ]}
+        defaultInputValue="default"
       />
     </>
   );
