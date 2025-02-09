@@ -13,6 +13,10 @@ export default function Home() {
             id: "hoge",
             label: "hoge label",
           },
+          {
+            id: "foga",
+            label: "fuga label",
+          },
         ]}
         defaultInputValue="default"
       />
