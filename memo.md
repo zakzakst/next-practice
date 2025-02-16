@@ -47,6 +47,8 @@
   - md ファイルに内容が記載されていれば
     - settings を無効にしても fix 時に反映された
     - md ファイルの内容をコメントアウトしても、それで無効になることはなかった
+    - 「github.copilot.chat.codeGeneration.useInstructionFiles」はデフォルト true っぽい
+    - /fix を実行した時に参照するファイルが一瞬チャット上に表示されるので、意図したファイルを参照しているか確認できる
 
 ## 参考ページ（済）
 

@@ -5,6 +5,15 @@
     }
   ],
   "settings": {
-    "github.copilot.chat.codeGeneration.useInstructionFiles": true
+    // "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+    "github.copilot.chat.codeGeneration.useInstructionFiles": false,
+    "github.copilot.chat.codeGeneration.instructions": [
+      {
+        "file": "_instructions/common-style.md"
+      },
+      {
+        "file": "_instructions/ts-style.md"
+      }
+    ]
   }
 }
