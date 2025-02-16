@@ -49,6 +49,7 @@
     - md ファイルの内容をコメントアウトしても、それで無効になることはなかった
     - 「github.copilot.chat.codeGeneration.useInstructionFiles」はデフォルト true っぽい
     - /fix を実行した時に参照するファイルが一瞬チャット上に表示されるので、意図したファイルを参照しているか確認できる
+    - 「ts,tsx ファイルを修正する時は`_instructions/ts-style.md`をガイドラインとして利用してください」という指示だと上手く参照されなかった
 
 ## 参考ページ（済）
 
