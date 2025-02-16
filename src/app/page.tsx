@@ -24,16 +24,21 @@ export default function Home() {
       <Select
         className="custom-class"
         label="Select"
+        // defaultSelectedKey="hoge"
         items={[
           {
             id: "hoge",
             label: "hoge label",
           },
           {
-            id: "foga",
+            id: "fuga",
             label: "fuga label",
           },
         ]}
+        // isDisabled
+        placeholder="test"
+        name="test"
+        isRequired
       />
     </>
   );

@@ -84,9 +84,9 @@ describe("ComboBox", () => {
     const comboboxLabelId = comboboxLabelEl?.id;
     const comboboxLabelFor = comboboxLabelEl?.getAttribute("for");
     const comboboxInputId = comboboxInputEl?.id;
-    const comboboxInputLabeledby =
+    const comboboxInputLabelledby =
       comboboxInputEl?.getAttribute("aria-labelledby");
-    expect(comboboxInputLabeledby).toBe(comboboxLabelId);
+    expect(comboboxInputLabelledby).toBe(comboboxLabelId);
     expect(comboboxLabelFor).toBe(comboboxInputId);
   });
 

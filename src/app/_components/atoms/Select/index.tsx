@@ -27,9 +27,9 @@ type OwnProps = {
 
 type Props = OwnProps & Omit<RaSelectProps, keyof OwnProps>;
 
-const Select = ({ label, items, className, ...props }: Props) => {
+const Select = ({ label, items, className, ...rest }: Props) => {
   return (
-    <RaSelect className={classNames(className, styles.main)} {...props}>
+    <RaSelect className={classNames(className, styles.main)} {...rest}>
       <Label>{label}</Label>
       <Button>
         <SelectValue />
@@ -38,7 +38,9 @@ const Select = ({ label, items, className, ...props }: Props) => {
       <Popover>
         <ListBox>
           {items.map((item) => (
-            <ListBoxItem key={item.id}>{item.label}</ListBoxItem>
+            <ListBoxItem key={item.id} id={item.id}>
+              {item.label}
+            </ListBoxItem>
           ))}
         </ListBox>
       </Popover>
