@@ -11,8 +11,11 @@
       {
         "file": "_instructions/common-style.md"
       },
+      // {
+      //   "file": "_instructions/mdn-style.md"
+      // },
       {
-        "file": "_instructions/ts-style.md"
+        "file": "_instructions/deep-dive-style.md"
       }
     ]
   }
