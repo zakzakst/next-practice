@@ -28,9 +28,9 @@ type OwnProps = {
 // TODO: RaComboBoxPropsの引数きちんと読み切れていない（エラーが出ていないだけ）。余裕ある時にちゃんと見る。
 type Props = OwnProps & Omit<RaComboBoxProps<Item>, keyof OwnProps>;
 
-const ComboBox = ({ label, items, className, ...props }: Props) => {
+const ComboBox = ({ label, items, className, ...rest }: Props) => {
   return (
-    <RaComboBox className={classNames(className, styles.main)} {...props}>
+    <RaComboBox className={classNames(className, styles.main)} {...rest}>
       <Label>{label}</Label>
       <div>
         <Input />

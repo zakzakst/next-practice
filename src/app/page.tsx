@@ -2,6 +2,7 @@
 
 import ComboBox from "@/app/_components/atoms/ComboBox";
 import Select from "@/app/_components/atoms/Select";
+import Menu from "@/app/_components/atoms/Menu";
 
 export default function Home() {
   return (
@@ -39,6 +40,20 @@ export default function Home() {
         placeholder="test"
         name="test"
         isRequired
+      />
+      <Menu
+        className="custom-class"
+        label="Menu"
+        items={[
+          {
+            id: "hoge",
+            label: "hoge label",
+          },
+          {
+            id: "foga",
+            label: "fuga label",
+          },
+        ]}
       />
     </>
   );
