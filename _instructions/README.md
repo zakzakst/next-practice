@@ -5,3 +5,6 @@
 
 - deep-dive-style.md / deep-dive-instructions.ts
   https://typescript-jp.gitbook.io/deep-dive/styleguide
+
+- airbnb-style.md / airbnb-instructions.ts
+  https://github.com/airbnb/javascript
