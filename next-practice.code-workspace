@@ -14,8 +14,11 @@
       // {
       //   "file": "_instructions/mdn-style.md"
       // },
+      // {
+      //   "file": "_instructions/deep-dive-style.md"
+      // },
       {
-        "file": "_instructions/deep-dive-style.md"
+        "file": "_instructions/airbnb-style.md"
       }
     ]
   }
