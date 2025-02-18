@@ -35,7 +35,7 @@ const Menu = ({ label, items, className, ...rest }: Props) => {
           {items.map((item) => (
             <MenuItem
               key={item.id}
-              onAction={() => alert(`click ${item.label}`)}
+              // onAction={() => alert(`click ${item.label}`)}
             >
               {item.label}
             </MenuItem>
