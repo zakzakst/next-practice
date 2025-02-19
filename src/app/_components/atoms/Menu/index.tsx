@@ -21,12 +21,13 @@ type OwnProps = {
   label: string;
   items: Item[];
   className?: string;
+  onClickMenu?: (id: string) => void;
 };
 
 // TODO: RaMenuPropsの引数きちんと読み切れていない（エラーが出ていないだけ）。余裕ある時にちゃんと見る。
 type Props = OwnProps & Omit<RaMenuProps<Item>, keyof OwnProps>;
 
-const Menu = ({ label, items, className, ...rest }: Props) => {
+const Menu = ({ label, items, className, onClickMenu, ...rest }: Props) => {
   return (
     <MenuTrigger {...rest}>
       <Button aria-label={label}>☰</Button>
@@ -35,7 +36,7 @@ const Menu = ({ label, items, className, ...rest }: Props) => {
           {items.map((item) => (
             <MenuItem
               key={item.id}
-              // onAction={() => alert(`click ${item.label}`)}
+              onAction={onClickMenu ? () => onClickMenu(item.id) : undefined}
             >
               {item.label}
             </MenuItem>

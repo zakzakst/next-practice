@@ -45,5 +45,16 @@ describe("Menu", () => {
   /**
    * 挙動の確認
    */
-  // TODO: Menuコンポーネントのクリック時の関数、マージ通すために一旦コメントアウトしている。後ほどコメントアウト解除してからテスト書いて対応
+  it("onClickMenuに設定した関数が実行される", async () => {
+    const handleClick = jest.fn();
+    const user = userEvent.setup();
+    const { getByRole, getAllByRole } = render(
+      <Menu label="Menu" items={MenuItems} onClickMenu={handleClick} />
+    );
+    const buttonEl = getByRole("button");
+    await user.click(buttonEl);
+    const menuItemEls = getAllByRole("menuitem");
+    await user.click(menuItemEls[0]);
+    expect(handleClick).toHaveBeenCalled();
+  });
 });

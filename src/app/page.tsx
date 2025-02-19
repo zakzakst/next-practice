@@ -54,6 +54,7 @@ export default function Home() {
             label: "fuga label",
           },
         ]}
+        onClickMenu={(id) => console.log(id)}
       />
     </>
   );
