@@ -12,11 +12,11 @@ const MenuItems = [
   {
     id: "menu2",
     label: "menu2",
+    isDisabled: true,
   },
   {
     id: "menu3",
     label: "menu3",
-    isDisabled: true,
   },
 ];
 
@@ -75,7 +75,7 @@ describe("Menu", () => {
     const buttonEl = getByRole("button");
     await user.click(buttonEl);
     const menuItemEls = getAllByRole("menuitem");
-    expect(menuItemEls[2]).toHaveAttribute("aria-disabled", "true");
+    expect(menuItemEls[1]).toHaveAttribute("aria-disabled", "true");
   });
 
   it("開閉状態が設定される", async () => {
@@ -86,5 +86,25 @@ describe("Menu", () => {
     expect(buttonEl).toHaveAttribute("aria-haspopup", "true");
     await user.click(buttonEl);
     expect(buttonEl).toHaveAttribute("aria-expanded", "true");
+  });
+
+  it("キーボードで選択できる", async () => {
+    const user = userEvent.setup();
+    const { getByRole, getAllByRole } = render(
+      <Menu label="Menu" items={MenuItems} />
+    );
+    const buttonEl = getByRole("button");
+    await user.tab();
+    expect(document.activeElement).toBe(buttonEl);
+    // メニューが開くと一番上の項目にフォーカスされる
+    await user.keyboard("{Enter}");
+    const menuItemEls = getAllByRole("menuitem");
+    expect(document.activeElement).toBe(menuItemEls[0]);
+    // 上下矢印キーで選択項目を移動できる（無効の項目は飛ばされる）
+    await user.keyboard("{ArrowDown}");
+    expect(document.activeElement).toBe(menuItemEls[2]);
+    // エスケープキーでメニューが閉じる
+    await user.keyboard("{Escape}");
+    expect(buttonEl).toHaveAttribute("aria-expanded", "false");
   });
 });

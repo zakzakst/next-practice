@@ -50,9 +50,13 @@ export default function Home() {
             label: "hoge label",
           },
           {
-            id: "foga",
+            id: "fuga",
             label: "fuga label",
             isDisabled: true,
+          },
+          {
+            id: "ara",
+            label: "ara label",
           },
         ]}
         onClickMenu={(id) => console.log(id)}

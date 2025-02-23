@@ -1,6 +1,8 @@
 ## やること
 
 - vscode の launch.json 使ってみる
+- 最新の状態でのテスト要求設定変更する
+  https://qiita.com/k-yamada-github/items/4e90de092bc102bd0895
 - react-aria-components のコンポーネント一通り見る
   https://react-spectrum.adobe.com/react-aria/components.html
 - テストコード書く
