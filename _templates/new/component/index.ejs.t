@@ -3,6 +3,7 @@ Name: <%= h.capitalize(name) %>
 to: src/app/_components/<%= type %>/<%= Name %>/index.tsx
 ---
 "use client";
+// 参考：
 
 import classNames from "classnames";
 import styles from "./index.module.scss";
