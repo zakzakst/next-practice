@@ -16,6 +16,7 @@ const MenuItems = [
   {
     id: "menu3",
     label: "menu3",
+    isDisabled: true,
   },
 ];
 
@@ -42,6 +43,10 @@ describe("Menu", () => {
     expect(menuEl).toHaveClass("custom-class");
   });
 
+  // it("refで要素を参照できる", () => {
+  //   // NOTE: 下記の記述を真似しようとしたが上手く出来なかった。一旦後回し
+  // });
+
   /**
    * 挙動の確認
    */
@@ -55,6 +60,31 @@ describe("Menu", () => {
     await user.click(buttonEl);
     const menuItemEls = getAllByRole("menuitem");
     await user.click(menuItemEls[0]);
-    expect(handleClick).toHaveBeenCalled();
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  // it("selectionModeがmultipleの時に、aria-checkedが設定される", () => {
+  //   // NOTE: 自作コンポーネントに上手く反映出来なかった。一旦後回し
+  // });
+
+  it("無効状態が設定される", async () => {
+    const user = userEvent.setup();
+    const { getByRole, getAllByRole } = render(
+      <Menu label="Menu" items={MenuItems} />
+    );
+    const buttonEl = getByRole("button");
+    await user.click(buttonEl);
+    const menuItemEls = getAllByRole("menuitem");
+    expect(menuItemEls[2]).toHaveAttribute("aria-disabled", "true");
+  });
+
+  it("開閉状態が設定される", async () => {
+    const user = userEvent.setup();
+    const { getByRole } = render(<Menu label="Menu" items={MenuItems} />);
+    const buttonEl = getByRole("button");
+    expect(buttonEl).toHaveAttribute("aria-expanded", "false");
+    expect(buttonEl).toHaveAttribute("aria-haspopup", "true");
+    await user.click(buttonEl);
+    expect(buttonEl).toHaveAttribute("aria-expanded", "true");
   });
 });
