@@ -15,6 +15,7 @@ import styles from "./index.module.scss";
 type Item = {
   id: string;
   label: string;
+  isDisabled?: boolean;
 };
 
 type OwnProps = {
@@ -37,6 +38,7 @@ const Menu = ({ label, items, className, onClickMenu, ...rest }: Props) => {
             <MenuItem
               key={item.id}
               onAction={onClickMenu ? () => onClickMenu(item.id) : undefined}
+              isDisabled={item.isDisabled}
             >
               {item.label}
             </MenuItem>

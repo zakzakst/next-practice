@@ -52,9 +52,11 @@ export default function Home() {
           {
             id: "foga",
             label: "fuga label",
+            isDisabled: true,
           },
         ]}
         onClickMenu={(id) => console.log(id)}
+        selectionMode="multiple"
       />
     </>
   );
