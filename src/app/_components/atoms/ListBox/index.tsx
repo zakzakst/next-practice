@@ -3,14 +3,38 @@
 
 import classNames from "classnames";
 import styles from "./index.module.scss";
+import {
+  ListBox as RaListBox,
+  ListBoxProps as RaListBoxProps,
+  ListBoxItem,
+} from "react-aria-components";
 
-type Props = {
-  children: React.ReactNode;
+type Item = {
+  id: string;
+  label: string;
+};
+
+type OwnProps = {
+  label: string;
+  items: Item[];
   className?: string;
 };
 
-const ListBox = ({ children, className }: Props) => {
-  return <div className={classNames(className, styles.main)}>{children}</div>;
+// TODO: RaMenuPropsの引数きちんと読み切れていない（エラーが出ていないだけ）。余裕ある時にちゃんと見る。
+type Props = OwnProps & Omit<RaListBoxProps<Item>, keyof OwnProps>;
+
+const ListBox = ({ label, items, className, ...rest }: Props) => {
+  return (
+    <RaListBox
+      className={classNames(className, styles.main)}
+      {...rest}
+      aria-label={label}
+    >
+      {items.map((item) => (
+        <ListBoxItem key={item.id}>{item.label}</ListBoxItem>
+      ))}
+    </RaListBox>
+  );
 };
 
 export default ListBox;
