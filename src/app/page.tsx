@@ -1,13 +1,14 @@
 "use client";
 
-import ComboBox from "@/app/_components/atoms/ComboBox";
-import Select from "@/app/_components/atoms/Select";
-import Menu from "@/app/_components/atoms/Menu";
+// import ComboBox from "@/app/_components/atoms/ComboBox";
+// import Select from "@/app/_components/atoms/Select";
+// import Menu from "@/app/_components/atoms/Menu";
+import ListBox from "@/app/_components/atoms/ListBox";
 
 export default function Home() {
   return (
     <>
-      <ComboBox
+      {/* <ComboBox
         className="custom-class"
         label="ComboBox"
         items={[
@@ -21,8 +22,8 @@ export default function Home() {
           },
         ]}
         defaultInputValue="default"
-      />
-      <Select
+      /> */}
+      {/* <Select
         className="custom-class"
         label="Select"
         // defaultSelectedKey="hoge"
@@ -40,8 +41,8 @@ export default function Home() {
         placeholder="test"
         name="test"
         isRequired
-      />
-      <Menu
+      /> */}
+      {/* <Menu
         className="custom-class"
         label="Menu"
         items={[
@@ -61,6 +62,20 @@ export default function Home() {
         ]}
         onClickMenu={(id) => console.log(id)}
         selectionMode="multiple"
+      /> */}
+      <ListBox
+        label="ListBox"
+        className="custom-class"
+        items={[
+          {
+            id: "hoge",
+            label: "hoge label",
+          },
+          {
+            id: "fuga",
+            label: "fuga label",
+          },
+        ]}
       />
     </>
   );
