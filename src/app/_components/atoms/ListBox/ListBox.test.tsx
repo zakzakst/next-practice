@@ -21,6 +21,14 @@ describe("ListBox", () => {
   /**
    * Propsの確認
    */
+  it("labelの内容が反映される", () => {
+    const { getByRole } = render(
+      <ListBox className="custom-class" items={ListBoxItems} label="ListBox" />
+    );
+    const ListBoxEl = getByRole("listbox");
+    expect(ListBoxEl).toHaveAttribute("aria-label", "ListBox");
+  });
+
   it("カスタムクラスが設定される", () => {
     const { getByRole } = render(
       <ListBox className="custom-class" items={ListBoxItems} label="ListBox" />
