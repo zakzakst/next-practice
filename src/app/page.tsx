@@ -74,8 +74,16 @@ export default function Home() {
           {
             id: "fuga",
             label: "fuga label",
+            // isDisabled: true,
           },
         ]}
+        autoFocus
+        onAction={(id) => {
+          console.log(id);
+        }}
+        renderEmptyState={() => "No results"}
+        selectionMode="multiple"
+        // orientation="horizontal"
       />
     </>
   );
