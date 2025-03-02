@@ -12,18 +12,20 @@ import {
 type Item = {
   id: string;
   label: string;
+  isDisabled?: boolean;
 };
 
 type OwnProps = {
   label: string;
   items: Item[];
   className?: string;
+  onAction?: (id: string) => void;
 };
 
 // TODO: RaMenuPropsの引数きちんと読み切れていない（エラーが出ていないだけ）。余裕ある時にちゃんと見る。
 type Props = OwnProps & Omit<RaListBoxProps<Item>, keyof OwnProps>;
 
-const ListBox = ({ label, items, className, ...rest }: Props) => {
+const ListBox = ({ label, items, className, onAction, ...rest }: Props) => {
   return (
     <RaListBox
       className={classNames(className, styles.main)}
@@ -31,7 +33,13 @@ const ListBox = ({ label, items, className, ...rest }: Props) => {
       aria-label={label}
     >
       {items.map((item) => (
-        <ListBoxItem key={item.id}>{item.label}</ListBoxItem>
+        <ListBoxItem
+          key={item.id}
+          isDisabled={item.isDisabled}
+          onAction={() => onAction && onAction(item.id)}
+        >
+          {item.label}
+        </ListBoxItem>
       ))}
     </RaListBox>
   );
