@@ -122,11 +122,11 @@ export default function Home() {
           ]}
           // items={[]}
           renderEmptyState={() => "No results"}
-          selectionMode="multiple"
+          // selectionMode="multiple"
           onAction={(id) => {
             console.log(id);
           }}
-          layout="grid"
+          // layout="grid"
         />
       </>
     </>
