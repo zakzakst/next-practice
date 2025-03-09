@@ -5,17 +5,17 @@ import ListBox from "./";
 
 const ListBoxItems = [
   {
-    id: "menu1",
-    label: "menu1",
+    id: "item1",
+    label: "item1",
   },
   {
-    id: "menu2",
-    label: "menu2",
+    id: "item2",
+    label: "item2",
     isDisabled: true,
   },
   {
-    id: "menu3",
-    label: "menu3",
+    id: "item3",
+    label: "item3",
   },
 ];
 
@@ -45,11 +45,11 @@ describe("ListBox", () => {
     );
     const optionEls = getAllByRole("option");
     expect(optionEls).toHaveLength(3);
-    // expect(optionEls[1].textContent).toBe("menu2");
+    // expect(optionEls[1].textContent).toBe("item2");
     expect(optionEls.map((optionEl) => optionEl.textContent)).toEqual([
-      "menu1",
-      "menu2",
-      "menu3",
+      "item1",
+      "item2",
+      "item3",
     ]);
   });
 
@@ -96,7 +96,7 @@ describe("ListBox", () => {
     expect(onAction).not.toHaveBeenCalled();
     // 項目をクリックした場合、onActionが実行される
     await user.click(optionEls[0]);
-    expect(onAction).toHaveBeenCalledWith("menu1");
+    expect(onAction).toHaveBeenCalledWith("item1");
   });
 
   it("上下キーボードで選択項目を移動する", async () => {

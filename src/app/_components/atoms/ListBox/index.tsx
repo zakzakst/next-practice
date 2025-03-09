@@ -22,7 +22,7 @@ type OwnProps = {
   onAction?: (id: string) => void;
 };
 
-// TODO: RaMenuPropsの引数きちんと読み切れていない（エラーが出ていないだけ）。余裕ある時にちゃんと見る。
+// TODO: RaListBoxPropsの引数きちんと読み切れていない（エラーが出ていないだけ）。余裕ある時にちゃんと見る。
 type Props = OwnProps & Omit<RaListBoxProps<Item>, keyof OwnProps>;
 
 const ListBox = ({ label, items, className, onAction, ...rest }: Props) => {
