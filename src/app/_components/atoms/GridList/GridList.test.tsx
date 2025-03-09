@@ -49,12 +49,31 @@ describe("GridList", () => {
     );
     const rowEls = getAllByRole("row");
     expect(rowEls).toHaveLength(3);
-    // TODO: rowの子要素のgridcellとaria-colindexのテスト書きたい
     expect(rowEls.map((rowEl) => rowEl.textContent)).toEqual([
       "item1",
       "item2",
       "item3",
     ]);
+  });
+
+  it("アクセシビリティ関連の属性が設定される", () => {
+    const { getByRole, getAllByRole } = render(
+      <GridList
+        items={GridListItems}
+        label="GridList"
+        selectionMode="multiple"
+      />
+    );
+    const GridListEl = getByRole("grid");
+    const rowEls = getAllByRole("row");
+    const gridcellEls = getAllByRole("gridcell");
+    expect(GridListEl).toHaveAttribute("aria-multiselectable", "true");
+    rowEls.forEach((rowEl, index) => {
+      expect(rowEl).toHaveAttribute("aria-label", GridListItems[index].label);
+    });
+    gridcellEls.forEach((gridcellEl) => {
+      expect(gridcellEl).toHaveAttribute("aria-colindex", "1");
+    });
   });
 
   // NOTE: autoFocusが上手く設定できなかった。余裕ある時にちゃんと見る。
@@ -165,5 +184,30 @@ describe("GridList", () => {
     expect(document.activeElement).toBe(rowEls[2]);
     await user.keyboard("{ArrowLeft}");
     expect(document.activeElement).toBe(rowEls[0]);
+  });
+
+  it("選択状態に応じたtabindexが設定される", async () => {
+    const user = userEvent.setup();
+    const { getByRole, getAllByRole } = render(
+      <GridList items={GridListItems} label="GridList" />
+    );
+    const GridListEl = getByRole("grid");
+    const rowEls = getAllByRole("row");
+    // 初期描画時の設定
+    expect(GridListEl).toHaveAttribute("tabindex", "0");
+    rowEls.forEach((rowEl, index) => {
+      if (!GridListItems[index]?.isDisabled) {
+        expect(rowEl).toHaveAttribute("tabindex", "-1");
+      } else {
+        expect(rowEl).not.toHaveAttribute("tabindex");
+      }
+    });
+    // 項目選択選択時の設定
+    await user.tab();
+    expect(GridListEl).toHaveAttribute("tabindex", "-1");
+    expect(rowEls[0]).toHaveAttribute("tabindex", "0");
+    await user.keyboard("{ArrowDown}");
+    expect(rowEls[0]).toHaveAttribute("tabindex", "-1");
+    expect(rowEls[2]).toHaveAttribute("tabindex", "0");
   });
 });
