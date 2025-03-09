@@ -113,8 +113,20 @@ export default function Home() {
             {
               id: "fuga",
               label: "fuga label",
+              isDisabled: true,
+            },
+            {
+              id: "hedo",
+              label: "hedo label",
             },
           ]}
+          // items={[]}
+          renderEmptyState={() => "No results"}
+          selectionMode="multiple"
+          onAction={(id) => {
+            console.log(id);
+          }}
+          layout="grid"
         />
       </>
     </>
