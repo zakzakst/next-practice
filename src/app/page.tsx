@@ -5,7 +5,8 @@
 // import Select from "@/app/_components/atoms/Select";
 // import Menu from "@/app/_components/atoms/Menu";
 // import ListBox from "@/app/_components/atoms/ListBox";
-import GridList from "@/app/_components/atoms/GridList";
+// import GridList from "@/app/_components/atoms/GridList";
+import Table from "@/app/_components/atoms/Table";
 // #endregion
 
 export default function Home() {
@@ -102,7 +103,7 @@ export default function Home() {
       </>
       {/* GridList */}
       <>
-        <GridList
+        {/* <GridList
           label="GridList"
           className="custom-class"
           items={[
@@ -127,6 +128,27 @@ export default function Home() {
             console.log(id);
           }}
           // layout="grid"
+        /> */}
+      </>
+      {/* Table */}
+      <>
+        <Table
+          label="Table"
+          className="custom-class"
+          headerRow={["見出し1", "見出し2", "見出し3"]}
+          bodyRows={[
+            {
+              row: ["項目1-1", "項目1-2", "項目1-3"],
+            },
+            {
+              row: ["項目2-1", "項目2-2", "項目2-3"],
+              isDisabled: true,
+            },
+            {
+              row: ["項目3-1", "項目3-2", "項目3-3"],
+            },
+          ]}
+          // bodyRows={[]}
         />
       </>
     </>
