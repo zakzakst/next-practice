@@ -6,7 +6,8 @@
 // import Menu from "@/app/_components/atoms/Menu";
 // import ListBox from "@/app/_components/atoms/ListBox";
 // import GridList from "@/app/_components/atoms/GridList";
-import Table from "@/app/_components/atoms/Table";
+// import Table from "@/app/_components/atoms/Table";
+import Tree from "@/app/_components/atoms/Tree";
 // #endregion
 
 export default function Home() {
@@ -132,7 +133,7 @@ export default function Home() {
       </>
       {/* Table */}
       <>
-        <Table
+        {/* <Table
           label="Table"
           className="custom-class"
           headerRow={["見出し1", "見出し2", "見出し3"]}
@@ -149,7 +150,11 @@ export default function Home() {
             },
           ]}
           // bodyRows={[]}
-        />
+        /> */}
+      </>
+      {/* Tree */}
+      <>
+        <Tree className="custom-class">Tree</Tree>
       </>
     </>
   );
